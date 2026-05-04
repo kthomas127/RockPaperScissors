@@ -2,6 +2,8 @@ var humanScore = 0;
 var computerScore = 0;
 const choices = ["Rock", "Paper", "Scissors"];
 const buttons = document.querySelectorAll(".selection");
+const div = document.querySelector("div");
+const p = document.createElement("p");
 
 function getComputerChoice() {
     return com_rand = Math.floor(Math.random() * 3);
@@ -10,27 +12,31 @@ function getComputerChoice() {
 function playRound(humanChoice, computerChoice){
     if (humanChoice === -1) {
         console.log("Invalid choice, choose either Rock, Paper, or Scissors"); 
-        return;
+        return "Invalid choice";
     }
     const result = (humanChoice - computerChoice + 3) % 3;
 
     if (result === 0){
-        console.log(`Tie! Both chose ${choices[humanChoice]}`);
+        return (`Tie! Both chose ${choices[humanChoice]}`);
     } else if (result === 1){
-        console.log(`You Won! ${choices[humanChoice]} beats ${choices[computerChoice]}`);
         humanScore ++;
+        return (`You Won! ${choices[humanChoice]} beats ${choices[computerChoice]}`);
     } else {
-        console.log(`You Lose! ${choices[computerChoice]} beats ${choices[humanChoice]}`);
         computerScore ++;
+        return (`You Lose! ${choices[computerChoice]} beats ${choices[humanChoice]}`);
     }
-    console.log(`Your Score: ${humanScore}\nComputer Score: ${computerScore}`);
 }
-console.log("Let's play Rock, Paper, Scissors!");
+// console.log("Let's play Rock, Paper, Scissors!");
 
 buttons.forEach(button => {
     button.addEventListener("click", (e) => {
         const humanChoice = parseInt(e.target.getAttribute("data-choice"));
         const computerChoice  = getComputerChoice();
-        playRound(humanChoice, computerChoice);
+        
+        const result = playRound(humanChoice, computerChoice);
+
+        p.textContent = `${result} Your score: ${humanScore} Computer Score: ${computerScore}`;
+        div.append(p);
     });
 });
+
