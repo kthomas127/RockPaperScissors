@@ -3,10 +3,10 @@
 ## Screenshot
 
 <p align="center">
-    <img src="./images/Landing.png" alt="Start Game Page" width="300" height="300">
+    <img src="./images/Landing.png" alt="Start Game Page" width="300" height="auto">
 </p>
 <p align="center">
-    <img src="./images/Play.png" alt="Gameplay" width="300" height = "400"
+    <img src="./images/Play.png" alt="Gameplay" width="300" height = "auto"
 </p>
 
 The game features:
