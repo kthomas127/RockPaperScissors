@@ -2,8 +2,12 @@
 
 ## Screenshot
 
-![Start game screenshot](./images/Landing.png "Start Game")
-![Play game screenshot](./images/Play.png "Gameplay")
+<p align="center">
+    <img src="./images/Landing.png" alt="Start Game Page" width="956" height="956">
+</p>
+<p align="center">
+    <img src="./images/Play.png" alt="Gameplay" width="692" height = "1192"
+</p>
 
 The game features:
 - Three interactive buttons at the top (Rock, Paper, Scissors)
